@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(fondo.jpg);
+    background-size: cover;
+    background-attachment: fixed; 
+}
+
+.listaEntrada {
+    list-style-type: none;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    margin: 0;
+}
+
+.listaEntrada li {
+    margin: 0 15px;
+}
+
+.listaEntrada a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.main-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+section {
+    text-align: center;
+}
+
+.grid {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.videojuegos {
+    background-image: url(videojuegos.jpg);
+}
+
+.series {
+    background-image: url(series.jpg);
+}
+
+.peliculas {
+    background-image: url(pochoclos.jpg);
+}
+
+.novelas {
+    background-image: url(libros.jpg);
+}
+
+.grid:hover {
+    transform: scale(1.5);
+}

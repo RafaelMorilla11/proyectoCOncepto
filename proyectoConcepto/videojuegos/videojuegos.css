@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(../videojuegos.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.main-container {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+section {
+    margin: 10px;
+}
+
+.grid {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    color: #003cff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.5s  ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.grid:hover.grid:hover {
+    transform: scale(1.1);
+}
+
+.cs2 {
+    background-image: url(cs2.webp)
+}
+
+.pp {
+   background-image: url(papersplease.png); 
+}
+
+.birth {
+    background-image: url(birth.jpg);
+}
+
+.lis {
+    background-image: url(lis.png);
+}
+
+.mm {
+    background-image: url(mm.avif);
+}

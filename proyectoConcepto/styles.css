@@ -1,0 +1,270 @@
+body.home {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("fondo.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.home .listaEntrada {
+    list-style-type: none;
+    font-size: 40px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+}
+
+.home .listaEntrada li {
+    margin: 0 15px;
+}
+
+.home .listaEntrada a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.home .main-container,
+.movies-list .main-container,
+.series-list .main-container,
+.games-list .main-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.home section,
+.movies-list section,
+.series-list section,
+.games-list section {
+    text-align: center;
+}
+
+.movies-list section,
+.series-list section,
+.games-list section {
+    margin: 10px;
+}
+
+.home .grid,
+.movies-list .grid,
+.series-list .grid,
+.games-list .grid {
+    margin: 10px;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.home .grid {
+    color: #fff;
+    transition: transform 0.5s ease-in-out;
+}
+
+.home .videojuegos {
+    background-image: url("videojuegos.jpg");
+}
+
+.home .series {
+    background-image: url("series.jpg");
+}
+
+.home .peliculas {
+    background-image: url("pochoclos.jpg");
+}
+
+.home .grid:hover {
+    transform: scale(1.5);
+}
+
+.movies-list,
+.series-list {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("pochoclos.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.games-list {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("videojuegos.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.movies-list .grid {
+    color: #fff;
+    transition: transform 0.5s ease-in-out;
+}
+
+.movies-list .nogamenolifezero {
+    background-image: url("peliculas/nogamenolifezero.jpg");
+}
+
+.movies-list .centurion {
+    background-image: url("peliculas/centurion.webp");
+}
+
+.series-list .grid,
+.games-list .grid {
+    color: #003cff;
+    transition: transform 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.series-list .grid:hover,
+.games-list .grid:hover {
+    transform: scale(1.1);
+}
+
+.series-list .nogamenolife {
+    background-image: url("series/nogamenolife.jpg");
+}
+
+.series-list .spartacus {
+    background-image: url("series/spartacus.webp");
+}
+
+.series-list .lacasadepapel {
+    background-image: url("series/lacasadepapel.jpg");
+}
+
+.games-list .cs2 {
+    background-image: url("videojuegos/cs2.webp");
+}
+
+.games-list .pp {
+    background-image: url("videojuegos/papersplease.png");
+}
+
+.games-list .birth {
+    background-image: url("videojuegos/birth.jpg");
+}
+
+.games-list .lis {
+    background-image: url("videojuegos/lis.png");
+}
+
+.games-list .mm {
+    background-image: url("videojuegos/mm.avif");
+}
+
+body.detail {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: white;
+}
+
+body.detail::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+body.centurion {
+    background-image: url("peliculas/centurion.webp");
+}
+
+body.nogamenolifezero {
+    background-image: url("peliculas/nogamenolifezero.jpg");
+}
+
+body.lacasadepapel {
+    background-image: url("series/lacasadepapel.jpg");
+}
+
+body.nogamenolife {
+    background-image: url("series/nogamenolife.jpg");
+}
+
+body.spartacus {
+    background-image: url("series/spartacus.webp");
+}
+
+body.birth {
+    background-image: url("videojuegos/birth.jpg");
+}
+
+body.counterstrike2 {
+    background-image: url("videojuegos/csgo.jpg");
+}
+
+body.lifeisstrange {
+    background-image: url("videojuegos/lis.png");
+}
+
+body.miningmechs {
+    background-image: url("videojuegos/mm.avif");
+}
+
+body.papersplease {
+    background-image: url("videojuegos/papersplease.png");
+}
+
+.detail h1,
+.detail h3 {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.detail h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.detail h3 {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.detail ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0);
+}
+
+.detail li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.opiniones {
+    background-image: url("routes/comentarios.jpeg");
+}
+
+.perfil {
+    background-image: url("routes/registro.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+}

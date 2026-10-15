@@ -1,20 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
     <title>Perfil</title>
 </head>
-<body class="perfil">
-    <h1>Perfil</h1>
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="opiniones.html">Opiniones</a></li>
-    <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" placeholder="Nombre" required>
- 
-    <input type="password" placeholder="Clave">
-    <input type="email" placeholder="Email" name="Email">
-    <input type="submit" value="Enviar">
+<body class="community-page perfil" data-page="profile">
+    <header class="community-nav">
+        <a class="community-brand" href="../index.html">Proyecto Concepto</a>
+        <nav aria-label="Navegación principal">
+            <a aria-current="page" href="perfil.html">Perfil</a>
+            <a href="opiniones.html">Opiniones</a>
+            <a href="../index.html">Inicio</a>
+        </nav>
+    </header>
+    <main class="community-shell">
+        <div class="community-heading">
+            <p class="community-kicker">Comunidad</p>
+            <h1>Tu perfil</h1>
+        </div>
+        <p class="community-notice" id="profile-notice" data-security-notice role="status" hidden></p>
+
+        <section class="community-panel" id="auth-panel" aria-labelledby="auth-heading" hidden>
+            <div class="mode-switch" role="group" aria-label="Acceso a la cuenta">
+                <button class="button button-secondary" type="button" data-auth-mode="register" aria-pressed="true">Crear cuenta</button>
+                <button class="button button-quiet" type="button" data-auth-mode="login" aria-pressed="false">Iniciar sesión</button>
+            </div>
+            <form id="register-form" class="community-form">
+                <h2 id="auth-heading">Crear perfil</h2>
+                <label>Nombre<input name="name" type="text" autocomplete="name" maxlength="80" required></label>
+                <label>Apodo<input name="nickname" type="text" autocomplete="nickname" maxlength="30" required></label>
+                <label class="field-wide">Mail<input name="email" type="email" autocomplete="email" maxlength="160" required></label>
+                <label class="field-wide">Aportes<textarea name="contributions" rows="3" maxlength="500" placeholder=""></textarea></label>
+                <label class="field-wide">Foto de perfil<input id="register-avatar" name="avatar" type="file" accept="image/*"></label>
+                <label class="field-wide">Contraseña<span class="password-control"><input id="register-password" name="password" type="password" autocomplete="new-password" minlength="8" required><button class="button button-quiet" type="button" data-toggle-password="register-password" aria-pressed="false">Mostrar</button></span></label>
+                <button class="button button-primary field-wide" type="submit">Crear perfil</button>
+            </form>
+            <form id="login-form" class="community-form" hidden>
+                <h2>Iniciar sesión</h2>
+                <label class="field-wide">Mail<input name="email" type="email" autocomplete="email" required></label>
+                <label class="field-wide">Contraseña<span class="password-control"><input id="login-password" name="password" type="password" autocomplete="current-password" required><button class="button button-quiet" type="button" data-toggle-password="login-password" aria-pressed="false">Mostrar</button></span></label>
+                <button class="button button-primary field-wide" type="submit">Entrar</button>
+            </form>
+        </section>
+
+        <section id="profile-view" hidden>
+            <div class="profile-summary">
+                <div class="profile-avatar-wrap">
+                    <img id="profile-avatar" class="profile-avatar" alt="Foto de perfil" hidden>
+                    <span id="profile-initials" class="profile-initials" aria-hidden="true"></span>
+                </div>
+                <div class="profile-summary-copy">
+                    <p class="community-kicker">Perfil de usuario</p>
+                    <h2 id="profile-name"></h2>
+                    <p class="profile-nickname" id="profile-nickname"></p>
+                </div>
+                <div class="profile-controls">
+                    <button class="button button-quiet" id="edit-profile-button" type="button">Editar perfil</button>
+                    <button class="button button-quiet" id="change-password-button" type="button">Cambiar contraseña</button>
+                </div>
+            </div>
+            <dl class="profile-details">
+                <div><dt>Mail</dt><dd id="profile-email"></dd></div>
+                <div class="profile-contribution"><dt>Aportes</dt><dd id="profile-contributions"></dd></div>
+            </dl>
+
+            <div class="profile-tools">
+                <form id="edit-profile-form" class="community-panel community-form" hidden>
+                    <h2>Editar datos</h2>
+                    <label>Nombre<input name="name" type="text" autocomplete="name" maxlength="80" required></label>
+                    <label>Apodo<input name="nickname" type="text" autocomplete="nickname" maxlength="30" required></label>
+                    <label class="field-wide">Mail<input name="email" type="email" autocomplete="email" maxlength="160" required></label>
+                    <label class="field-wide">Aportes<textarea name="contributions" rows="3" maxlength="500"></textarea></label>
+                    <label class="field-wide">Cambiar foto de perfil<input id="edit-avatar" name="avatar" type="file" accept="image/*"></label>
+                    <button class="button button-primary field-wide" type="submit">Guardar cambios</button>
+                </form>
+                <form id="change-password-form" class="community-panel community-form" hidden>
+                    <h2>Cambiar contraseña</h2>
+                    <label class="field-wide">Contraseña actual<span class="password-control"><input id="current-password" name="currentPassword" type="password" autocomplete="current-password" required><button class="button button-quiet" type="button" data-toggle-password="current-password" aria-pressed="false">Mostrar</button></span></label>
+                    <label class="field-wide">Nueva contraseña<span class="password-control"><input id="new-password" name="newPassword" type="password" autocomplete="new-password" minlength="8" required><button class="button button-quiet" type="button" data-toggle-password="new-password" aria-pressed="false">Mostrar</button></span></label>
+                    <label class="field-wide">Repetir nueva contraseña<span class="password-control"><input id="confirm-password" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" required><button class="button button-quiet" type="button" data-toggle-password="confirm-password" aria-pressed="false">Mostrar</button></span></label>
+                    <button class="button button-primary field-wide" type="submit">Actualizar contraseña</button>
+                </form>
+            </div>
+            <button class="button button-quiet logout-button" id="logout-button" type="button">Cerrar sesión</button>
+        </section>
+    </main>
+    <script src="community.js" defer></script>
 </body>
 </html>

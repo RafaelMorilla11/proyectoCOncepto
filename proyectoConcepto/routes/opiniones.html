@@ -1,16 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mainopiniones.css">
+    <link rel="stylesheet" href="../styles.css">
     <title>Opiniones</title>
 </head>
-<body>
-    <h1>Opiniones</h1>
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="perfil.html">Perfil</a></li>
-    <textarea name="" id="" placeholder="Mensaje" rows="4" cols="15"></textarea>
-    <input type="submit" value="Enviar">
+<body class="community-page opiniones" data-page="opinions">
+    <header class="community-nav">
+        <a class="community-brand" href="../index.html">Proyecto Concepto</a>
+        <nav aria-label="Navegación principal">
+            <a href="perfil.html">Perfil</a>
+            <a aria-current="page" href="opiniones.html">Opiniones</a>
+            <a href="../index.html">Inicio</a>
+        </nav>
+    </header>
+    <main class="community-shell">
+        <div class="community-heading opinions-heading">
+            <div>
+                <p class="community-kicker">Comunidad</p>
+                <h1>Opiniones</h1>
+            </div>
+            <label class="opinion-search">Buscar por juego, película o serie
+                <input id="opinion-search" type="search" placeholder="Ej.: Counter-Strike 2" autocomplete="off">
+            </label>
+        </div>
+        <p class="community-notice" id="opinions-notice" role="status" hidden></p>
+        <p class="login-prompt" id="opinions-login-prompt">Para publicar, comentar o indicar que te gusta, <a href="perfil.html">crea un perfil o inicia sesión</a>.</p>
+
+        <form id="opinion-form" class="community-panel community-form opinion-compose" hidden>
+            <h2>Compartir publicación</h2>
+            <label>Publicación
+                <select name="type" required>
+                    <option value="opinion">Opinión</option>
+                    <option value="suggestion">Sugerencia</option>
+                </select>
+            </label>
+            <label>Sobre
+                <select name="medium" required>
+                    <option value="Juego">Juego</option>
+                    <option value="Película">Película</option>
+                    <option value="Serie">Serie</option>
+                </select>
+            </label>
+            <label class="field-wide">Título<input name="title" type="text" maxlength="100" placeholder="Nombre del juego, película o serie" required></label>
+            <label class="field-wide">Tu publicación<textarea name="text" rows="4" maxlength="2000" required></textarea></label>
+            <button class="button button-primary field-wide" type="submit">Publicar</button>
+        </form>
+
+        <div class="opinion-list-heading">
+            <h2>Publicaciones</h2>
+            <div class="opinion-list-tools">
+                <span id="opinions-count" aria-live="polite"></span>
+                <label class="filter-label">Mostrar
+                    <select id="type-filter">
+                        <option value="all">Todo</option>
+                        <option value="opinion">Opiniones</option>
+                        <option value="suggestion">Sugerencias</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <section id="opinion-list" class="opinion-list" aria-label="Publicaciones de la comunidad"></section>
+    </main>
+    <script src="community.js" defer></script>
 </body>
 </html>
